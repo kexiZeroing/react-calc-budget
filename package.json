@@ -2,7 +2,7 @@
   "name": "me",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kexiZeroing.github.io.github.io/react",
+  "homepage": "http://kexiZeroing.github.io/me",
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
