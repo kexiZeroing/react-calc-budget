@@ -5,22 +5,32 @@ import ExpenseList from "./components/ExpenseList";
 import Alert from "./components/Alert";
 import uuid from "uuid/v4";
 
-const initialExpenses = [
-  { id: uuid(), charge: "rent", amount: 1600 },
-  { id: uuid(), charge: "car payment", amount: 400 },
-  { id: uuid(), charge: "credit card bill ", amount: 1200 }
-];
+// const initialExpenses = [
+//   { id: uuid(), charge: "rent", amount: 1600 },
+//   { id: uuid(), charge: "car payment", amount: 400 },
+//   { id: uuid(), charge: "credit card bill ", amount: 1200 }
+// ];
+
+const initialExpenses = localStorage.getItem("expenses")
+  ? JSON.parse(localStorage.getItem("expenses"))
+  : [];
 
 function App() {
   const [expenses, setExpenses] = useState(initialExpenses);
   const [charge, setCharge] = useState("");
   const [amount, setAmount] = useState("");
 
+  // show alert message
   const [alert, setAlert] = useState({ show: false });
   // submit or edit
   const [edit, setEdit] = useState(false);
   // store the id of editing item
   const [id, setId] = useState(0);
+
+  // when expenses change, run the callback function
+  useEffect(() => {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }, [expenses]);
 
   const handleCharge = e => {
     setCharge(e.target.value);
