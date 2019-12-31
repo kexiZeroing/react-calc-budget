@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "handlebars": "^4.5.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",
     "react-scripts": "^3.3.0",
+    "serialize-javascript": "^2.1.2",
     "uuid": "^3.3.3"
   },
   "scripts": {
